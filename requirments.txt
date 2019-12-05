@@ -1,11 +1,2 @@
-#framework
-django
-django-rest-framework
-
-
-#Setup virtual env on Vagrant
-vagrant ssh
-cd /vagrant/
-python -m venv ~/env
-source ~/env/bin/activate
-deactivate
+django==2.2
+djangorestframework==3.9.2
