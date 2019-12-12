@@ -22,7 +22,7 @@ class HelloApiView(APIView):
 
     def post(self, request):
         """Create Hello message with our name"""
-        serializer = self.serializer_class(date=request.data)
+        serializer = self.serializer_class(data=request.data)
 
         if serializer.is_valid():
             name = serializer.validated_data.get('name')
