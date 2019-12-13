@@ -32,3 +32,6 @@ class HelloApiView(APIView):
             return Response(
                 serializer.errors,
                 status=status.HTTP_400_BAD_REQUEST)
+
+    def put(self, request, pk=None):
+        return Response({'message': 'PUT'})
