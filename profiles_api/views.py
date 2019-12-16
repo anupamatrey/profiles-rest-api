@@ -7,7 +7,7 @@ from rest_framework import viewsets
 
 class HelloViewSet(viewsets.ViewSet):
     """Test API with View Sets"""
-
+    serializer_class = serializers.HelloSerializer
     def list(self, request):
         """Return a Hello message"""
         a_viewset = [
