@@ -3,11 +3,19 @@ from rest_framework.response import Response
 from rest_framework import status
 from profiles_api import serializers
 from rest_framework import viewsets
+from profiles_api import models
+
+class UserProfileViewSet(viewsets.ModelViewSet):
+    """Handle createing and updating profiles"""
+    serializer_class = serializers.UserProfileSerializer
+    queryset = models.UserProfile.objects.all()
+
 
 
 class HelloViewSet(viewsets.ViewSet):
     """Test API with View Sets"""
     serializer_class = serializers.HelloSerializer
+
     def list(self, request):
         """Return a Hello message"""
         a_viewset = [
@@ -52,6 +60,7 @@ class HelloViewSet(viewsets.ViewSet):
         """Handle removing an object"""
 
         return Response({'http_method': 'DELETE'})
+
 
 class HelloApiView(APIView):
     """Test API View"""
