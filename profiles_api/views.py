@@ -2,6 +2,22 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from profiles_api import serializers
+from rest_framework import viewsets
+
+
+class HelloViewSet(viewsets.ViewSet):
+    """Test API with View Sets"""
+
+    def list(self, request):
+        """Return a Hello message"""
+        a_viewset = [
+            "Create View Sets(List)",
+            "Is similar to a django view",
+            "Gives you the most control over you application logic",
+            "Mapped URL with Router"
+        ]
+
+        return Response({'message': 'Hello', 'a_viewset': a_viewset})
 
 
 class HelloApiView(APIView):
